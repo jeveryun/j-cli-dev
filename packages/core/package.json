@@ -6,6 +6,9 @@
   "homepage": "",
   "license": "ISC",
   "main": "lib/core.js",
+  "bin": {
+    "j-cli-dev": "bin/index.js"
+  },
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -22,5 +25,5 @@
   "dependencies": {
     "@j-cli-dev/utils": "^0.0.3"
   },
-  "gitHead": "cbc006570ce4352627cfcb86c5b236aac914b7bd"
+  "gitHead": "dd33bd15d890cd30c0b7f3e1a7c6643b21b35163"
 }
