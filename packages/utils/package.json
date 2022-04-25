@@ -14,10 +14,11 @@
     "lib"
   ],
   "publishConfig": {
-    "registry": "http://registry.npm.taobao.org/"
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "scripts": {
     "test": "echo \"Run tests from utils\" "
   },
-  "gitHead": "770b84e9679f11812135ef0e4b3a02a3dcae3dd7"
+  "gitHead": "2736602b3951117ec079d25725b836fcd485a960"
 }
