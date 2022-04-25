@@ -1,6 +1,6 @@
 {
   "name": "@j-cli-dev/core",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "> TODO: description",
   "author": "jeveryun <jeveryun@qq.com>",
   "homepage": "",
@@ -23,7 +23,7 @@
     "test": "echo \"Run tests from core\" "
   },
   "dependencies": {
-    "@j-cli-dev/utils": "^0.0.4"
+    "@j-cli-dev/utils": "^0.0.5"
   },
   "gitHead": "92736af460407500782820979ce719196543838d"
 }
