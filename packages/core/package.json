@@ -1,6 +1,6 @@
 {
   "name": "@j-cli-dev/core",
-  "version": "0.0.5",
+  "version": "1.0.0",
   "description": "> TODO: description",
   "author": "jeveryun <jeveryun@qq.com>",
   "homepage": "",
@@ -25,5 +25,5 @@
   "dependencies": {
     "@j-cli-dev/utils": "^0.0.5"
   },
-  "gitHead": "92736af460407500782820979ce719196543838d"
+  "gitHead": "770b84e9679f11812135ef0e4b3a02a3dcae3dd7"
 }
