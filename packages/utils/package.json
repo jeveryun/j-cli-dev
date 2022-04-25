@@ -1,0 +1,22 @@
+{
+  "name": "@j-cli-dev/utils",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "author": "jeveryun <jeveryun@qq.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/utils.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "http://registry.npm.taobao.org/"
+  },
+  "scripts": {
+    "test": "echo \"Run tests from utils\" "
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "@j-cli-dev/core",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "author": "jeveryun <jeveryun@qq.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/core.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "http://registry.npm.taobao.org/"
+  },
+  "scripts": {
+    "test": "echo \"Run tests from core\" "
+  },
+  "dependencies": {
+    "@j-cli-dev/utils": "^1.0.0"
+  }
+}
