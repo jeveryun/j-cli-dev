@@ -1,3 +1,5 @@
-#! /user/bin/env node
+#!/usr/bin/env node
 
-console.log('Hello j-cli yes');
+const utils = require('@j-cli-dev/utils');
+utils();
+console.log('Hello j-cli');
