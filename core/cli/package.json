@@ -24,7 +24,7 @@
     "test": "echo \"Run tests from core\" "
   },
   "dependencies": {
-    "@j-cli-dev/utils": "file:../../utils/utils"
+    "@j-cli-dev/utils": "^1.0.5"
   },
   "gitHead": "9c210c19adb7b854fa9d824fe6451491f8359086"
 }
