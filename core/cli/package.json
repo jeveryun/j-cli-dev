@@ -5,7 +5,7 @@
   "author": "jeveryun <jeveryun@qq.com>",
   "homepage": "",
   "license": "ISC",
-  "main": "lib/core.js",
+  "main": "lib/index.js",
   "bin": {
     "j-cli-dev": "bin/index.js"
   },
@@ -24,7 +24,7 @@
     "test": "echo \"Run tests from core\" "
   },
   "dependencies": {
-    "@j-cli-dev/utils": "file:../utils"
+    "@j-cli-dev/utils": "file:../../utils/utils"
   },
   "gitHead": "9c210c19adb7b854fa9d824fe6451491f8359086"
 }
