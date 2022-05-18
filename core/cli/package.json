@@ -24,10 +24,15 @@
     "test": "echo \"Run tests from core\" "
   },
   "dependencies": {
-    "@j-cli-dev/utils": "file:../../utils/utils",
     "@j-cli-dev/log": "file:../../utils/log",
+    "@j-cli-dev/utils": "file:../../utils/utils",
+    "colors": "^1.4.0",
     "import-local": "^3.0.2",
-    "npmlog": "^4.1.2"
+    "npmlog": "^4.1.2",
+    "path-exists": "^4.0.0",
+    "root-check": "^1.0.0",
+    "semver": "^7.3.7",
+    "user-home": "^2.0.0"
   },
   "gitHead": "9c210c19adb7b854fa9d824fe6451491f8359086"
 }
