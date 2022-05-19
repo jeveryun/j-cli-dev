@@ -20,7 +20,7 @@ let config;
 
 module.exports = core;
 
-function core() {
+async function core() {
   try {
     checkNodeVersion();
     checkPkgVersion();
@@ -28,9 +28,22 @@ function core() {
     checkUserHome();
     checkInputArgs();
     checkEnv();
+    checkGlobalUpdate();
   } catch (error) {
     log.error(error.message);
   }
+}
+
+async function checkGlobalUpdate() {
+  // 获取当前版本号和模块名
+  const currentVersion = pkg.version;
+  const npmName = pkg.name;
+  // 通过npm api 拿到模块名所有版本号
+  const { getNpmInfo } = require('@j-cli-dev/get-npm-info');
+  const data = await getNpmInfo(npmName);
+  console.log(data);
+  // 提取所有版本号，比对哪些版本号是大于当前版本号的
+  // 获取最新版本号
 }
 
 function checkEnv() {

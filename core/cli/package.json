@@ -26,6 +26,7 @@
   "dependencies": {
     "@j-cli-dev/log": "file:../../utils/log",
     "@j-cli-dev/utils": "file:../../utils/utils",
+    "@j-cli-dev/get-npm-info": "file:../../utils/get-npm-info",
     "colors": "^1.4.0",
     "dotenv": "^16.0.1",
     "import-local": "^3.0.2",
