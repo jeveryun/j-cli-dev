@@ -30,4 +30,33 @@ function getDefaultRegistry(isOriginal = false) {
     : 'https://registry.npm.taobao.org';
 }
 
-module.exports = { getNpmInfo };
+async function getNpmVersions(npmName, registry) {
+  const data = await getNpmInfo(npmName, registry);
+  if (data) {
+    return Object.keys(data.versions);
+  } else {
+    return [];
+  }
+}
+
+function getNpmSemverVersions(baseVersion, versions) {
+  versions = versions
+    .filter((version) => semver.satisfies(version, `^${baseVersion}`))
+    .sort((a, b) => {
+      const res = semver.gt(b, a);
+      return res ? 1 : -1;
+    });
+  return versions;
+}
+
+async function getNpmSemverVersion(baseVersion, npmName, registry) {
+  const versions = await getNpmVersions(npmName, registry);
+  const newVersions = getNpmSemverVersions(baseVersion, versions);
+  if (newVersions && newVersions.length > 0) {
+    return newVersions[0];
+  } else {
+    return null;
+  }
+}
+
+module.exports = { getNpmInfo, getNpmVersions, getNpmSemverVersion };
