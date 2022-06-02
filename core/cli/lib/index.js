@@ -14,6 +14,7 @@ const commander = require('commander');
 
 const log = require('@j-cli-dev/log');
 const init = require('@j-cli-dev/init');
+const exec = require('@j-cli-dev/exec');
 
 const pkg = require('../package.json');
 const constant = require('./const');
@@ -44,7 +45,7 @@ function registerCommand() {
   program
     .command('init [projectName]')
     .option('-f, --force', '是否强制初始化项目')
-    .action(init);
+    .action(exec);
 
   program.on('option:debug', function () {
     const opts = program.opts();

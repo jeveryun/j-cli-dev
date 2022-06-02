@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@j-cli-dev/get-npm-info": "file:../../utils/get-npm-info",
+    "@j-cli-dev/exec": "file:../exec",
     "@j-cli-dev/log": "file:../../utils/log",
     "@j-cli-dev/utils": "file:../../utils/utils",
     "@j-cli-dev/init": "file:../../commands/init",
