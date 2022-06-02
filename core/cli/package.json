@@ -24,13 +24,14 @@
     "test": "echo \"Run tests from core\" "
   },
   "dependencies": {
+    "@j-cli-dev/get-npm-info": "file:../../utils/get-npm-info",
     "@j-cli-dev/log": "file:../../utils/log",
     "@j-cli-dev/utils": "file:../../utils/utils",
-    "@j-cli-dev/get-npm-info": "file:../../utils/get-npm-info",
+    "@j-cli-dev/init": "file:../../commands/init",
     "colors": "^1.4.0",
+    "commander": "^9.3.0",
     "dotenv": "^16.0.1",
     "import-local": "^3.0.2",
-    "minimist": "^1.2.6",
     "npmlog": "^4.1.2",
     "path-exists": "^4.0.0",
     "root-check": "^1.0.0",
