@@ -25,5 +25,8 @@
   },
   "bugs": {
     "url": "https://github.com/jeveryun/j-cli-dev/issues"
+  },
+  "dependencies": {
+    "@j-cli-dev/utils": "file:../../utils/utils"
   }
 }

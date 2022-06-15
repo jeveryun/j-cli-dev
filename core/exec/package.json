@@ -27,6 +27,7 @@
     "url": "https://github.com/jeveryun/j-cli-dev/issues"
   },
   "dependencies": {
-    "@j-cli-dev/package": "file:../../models/package"
+    "@j-cli-dev/package": "file:../../models/package",
+    "@j-cli-dev/log": "file:../../utils/log"
   }
 }

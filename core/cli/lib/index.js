@@ -1,7 +1,5 @@
 'use strict';
 
-// now is 03.4-9
-
 // require .js/.json/.node
 
 const path = require('path');
