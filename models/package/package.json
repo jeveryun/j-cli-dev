@@ -27,10 +27,11 @@
     "url": "https://github.com/jeveryun/j-cli-dev/issues"
   },
   "dependencies": {
-    "@j-cli-dev/utils": "file:../../utils/utils",
     "@j-cli-dev/format-path": "file:../../utils/format-path",
     "@j-cli-dev/get-npm-info": "file:../../utils/get-npm-info",
-    "pkg-dir": "^4.2.0",
-    "npminstall": "^4.10.0"
+    "@j-cli-dev/utils": "file:../../utils/utils",
+    "npminstall": "^4.10.0",
+    "path-exists": "^4.0.0",
+    "pkg-dir": "^4.2.0"
   }
 }

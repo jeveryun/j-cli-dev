@@ -2,11 +2,15 @@
 
 const path = require('path');
 const pkgDir = require('pkg-dir').sync;
+const pathExists = require('path-exists').sync;
 const npminstall = require('npminstall');
 
 const { isObject } = require('@j-cli-dev/utils');
 const formatPath = require('@j-cli-dev/format-path');
-const { getDefaultRegistry } = require('@j-cli-dev/get-npm-info');
+const {
+  getDefaultRegistry,
+  getNpmLatestVersion,
+} = require('@j-cli-dev/get-npm-info');
 class Package {
   constructor(options) {
     if (!options) {
@@ -23,10 +27,32 @@ class Package {
     this.packageName = options.packageName;
     // package的version
     this.packageVersion = options.packageVersion;
+    // package的缓存目录前缀
+    this.cacheFilePathPrefix = this.packageName.replace('/', '_');
+  }
+
+  async prepare() {
+    if (this.packageVersion === 'latest') {
+      this.packageVersion = await getNpmLatestVersion(this.packageName);
+    }
+  }
+
+  get cacheFilePath() {
+    return path.resolve(
+      this.storeDir,
+      `_${this.cacheFilePathPrefix}@${this.packageVersion}@${this.packageName}`
+    );
   }
 
   // 判断当前Package是否存在
-  exists() {}
+  async exists() {
+    if (this.storeDir) {
+      await this.prepare();
+      return pathExists(this.cacheFilePath);
+    } else {
+      return pathExists(this.targetPath);
+    }
+  }
 
   // 安装Package
   async install() {

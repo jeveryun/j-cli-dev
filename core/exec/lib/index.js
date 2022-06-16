@@ -38,8 +38,9 @@ async function exec() {
       storeDir,
       packageVersion,
     });
-    if (pkg.exists()) {
+    if (await pkg.exists()) {
       // 更新package
+      console.log('更新package');
     } else {
       // 安装package
       await pkg.install();
@@ -51,7 +52,7 @@ async function exec() {
       packageVersion,
     });
   }
-  console.log(111111111);
+  console.log(await pkg.exists());
   const rootFile = pkg.getRootFilePath();
   // console.log(rootFile, arguments);
   if (rootFile) {
