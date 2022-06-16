@@ -1,6 +1,9 @@
 'use strict';
 
+const path = require('path');
+const pkgDir = require('pkg-dir').sync;
 const { isObject } = require('@j-cli-dev/utils');
+const formatPath = require('@j-cli-dev/format-path');
 class Package {
   constructor(options) {
     if (!options) {
@@ -12,7 +15,7 @@ class Package {
     // package 的路径
     this.targetPath = options.targetPath;
     // package 的存储路径
-    this.storePath = options.storePath;
+    // this.storePath = options.storePath;
     // package 的name
     this.packageName = options.packageName;
     // package的version
@@ -29,7 +32,20 @@ class Package {
   update() {}
 
   // 获取入口文件路径
-  getRootFilePath() {}
+  getRootFilePath() {
+    // 1，获取package.json所在目录 - pkg-dir
+    const dir = pkgDir(this.targetPath);
+    if (dir) {
+      // 2，读取package.json  - require()
+      const pkgFile = require(path.resolve(dir, 'package.json'));
+      // 3，main/lib - path
+      if (pkgFile && pkgFile.main) {
+        // 4，路径的兼容(macOS/windows)
+        return formatPath(path.resolve(dir, pkgFile.main));
+      }
+    }
+    return null;
+  }
 }
 
 module.exports = Package;
