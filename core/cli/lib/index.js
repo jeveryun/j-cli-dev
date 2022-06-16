@@ -29,6 +29,10 @@ async function core() {
     registerCommand();
   } catch (error) {
     log.error(error.message);
+    const opts = program.opts();
+    if (opts.debug) {
+      console.log(error);
+    }
   }
 }
 

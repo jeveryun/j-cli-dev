@@ -2,8 +2,11 @@
 
 const path = require('path');
 const pkgDir = require('pkg-dir').sync;
+const npminstall = require('npminstall');
+
 const { isObject } = require('@j-cli-dev/utils');
 const formatPath = require('@j-cli-dev/format-path');
+const { getDefaultRegistry } = require('@j-cli-dev/get-npm-info');
 class Package {
   constructor(options) {
     if (!options) {
@@ -15,7 +18,7 @@ class Package {
     // package 的路径
     this.targetPath = options.targetPath;
     // package 的存储路径
-    // this.storePath = options.storePath;
+    this.storeDir = options.storeDir;
     // package 的name
     this.packageName = options.packageName;
     // package的version
@@ -26,7 +29,14 @@ class Package {
   exists() {}
 
   // 安装Package
-  install() {}
+  async install() {
+    return npminstall({
+      root: this.targetPath,
+      storeDir: this.storeDir,
+      registry: getDefaultRegistry(),
+      pkgs: [{ name: this.packageName, version: this.packageVersion }],
+    });
+  }
 
   // 更新Package
   update() {}

@@ -29,6 +29,8 @@
   "dependencies": {
     "@j-cli-dev/utils": "file:../../utils/utils",
     "@j-cli-dev/format-path": "file:../../utils/format-path",
-    "pkg-dir": "^4.2.0"
+    "@j-cli-dev/get-npm-info": "file:../../utils/get-npm-info",
+    "pkg-dir": "^4.2.0",
+    "npminstall": "^4.10.0"
   }
 }
