@@ -40,7 +40,7 @@ async function exec() {
     });
     if (await pkg.exists()) {
       // 更新package
-      console.log('更新package');
+      await pkg.update();
     } else {
       // 安装package
       await pkg.install();
@@ -52,9 +52,7 @@ async function exec() {
       packageVersion,
     });
   }
-  console.log(await pkg.exists());
   const rootFile = pkg.getRootFilePath();
-  // console.log(rootFile, arguments);
   if (rootFile) {
     require(rootFile).apply(null, arguments);
   }
