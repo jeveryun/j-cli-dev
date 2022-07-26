@@ -1,8 +1,12 @@
 'use strict';
 
-function init(projectName, options, command) {
-  const opts = command.parent.opts();
-  console.log('init', projectName, options.force, process.env.CLI_TARGET_PATH);
+const Command = require('@j-cli-dev/command');
+
+class InitCommand extends Command {}
+
+function init(argv) {
+  return new InitCommand(argv);
 }
 
 module.exports = init;
+module.exports.InitCommand = InitCommand;

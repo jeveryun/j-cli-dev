@@ -11,7 +11,6 @@ const pathExists = require('path-exists').sync;
 const commander = require('commander');
 
 const log = require('@j-cli-dev/log');
-const init = require('@j-cli-dev/init');
 const exec = require('@j-cli-dev/exec');
 
 const pkg = require('../package.json');
@@ -79,7 +78,6 @@ function registerCommand() {
 
 async function prepare() {
   checkPkgVersion();
-  checkNodeVersion();
   checkRoot();
   checkUserHome();
   checkEnv();
@@ -138,16 +136,6 @@ function checkUserHome() {
 function checkRoot() {
   const rootCheck = require('root-check');
   rootCheck();
-}
-
-function checkNodeVersion() {
-  const currentVersion = process.version;
-  const lowerVersion = constant.LOWEST_NODE_VERSION;
-  if (semver.gt(lowerVersion, currentVersion)) {
-    throw new Error(
-      colors.red(`j-cli 需要安装 v${lowerVersion} 以上的 Node.js 版本!`)
-    );
-  }
 }
 
 function checkPkgVersion() {

@@ -1,7 +1,7 @@
 {
-  "name": "@j-cli-dev/init",
+  "name": "@j-cli-dev/command",
   "version": "1.0.6",
-  "description": "init",
+  "description": "> TODO: description",
   "author": "jeveryun <jeveryun@qq.com>",
   "homepage": "https://github.com/jeveryun/j-cli-dev#readme",
   "license": "ISC",
@@ -27,6 +27,9 @@
     "url": "https://github.com/jeveryun/j-cli-dev/issues"
   },
   "dependencies": {
-    "@j-cli-dev/command": "file:../../models/command"
+    "@j-cli-dev/package": "file:../../models/package",
+    "@j-cli-dev/log": "file:../../utils/log",
+    "semver": "^7.3.7",
+    "colors": "^1.4.0"
   }
 }
