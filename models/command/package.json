@@ -29,6 +29,7 @@
   "dependencies": {
     "@j-cli-dev/package": "file:../../models/package",
     "@j-cli-dev/log": "file:../../utils/log",
+    "@j-cli-dev/utils": "file:../../utils/utils",
     "semver": "^7.3.7",
     "colors": "^1.4.0"
   }
